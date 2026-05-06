@@ -1,1 +1,4 @@
 /venv
+.env
+/vehicle_maintenance_schedular/__pycache__
+/logging_middleware/__pycache__
