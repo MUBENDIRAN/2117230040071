@@ -31,7 +31,7 @@ POST /notification
 
 ## Real time Notification
 
-# I will use websockets for real time notification updates so users receive notification instantly without refresh
+I will use websockets for real time notification updates so users receive notification instantly without refresh
 
 ## Stage 2
 
@@ -56,7 +56,6 @@ CREATE TABLE notifications (
 
 The query is correct, but it becomes slow because the notifications table is very huge
 
-sql
 
 SELECT * FROM notifications
 WHERE studentID = 1042 AND isRead = false
@@ -65,7 +64,7 @@ ORDER BY createdAt DESC;
 
 I would add this index:
 
-sql
+
 CREATE INDEX idx_notifications
 ON notifications(studentID, isRead, createdAt DESC);
 
@@ -74,7 +73,6 @@ Adding indexes to every column makes the query slower
 
 ## Placement Notifications Query
 
-sql
 SELECT DISTINCT studentID
 FROM notifications
 WHERE notificationType = 'Placement'
