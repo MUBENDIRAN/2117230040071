@@ -25,7 +25,7 @@ def log(stack,level,package,message):
         response=requests.post(
             url,
             json=payload,
-            headers=headers
+            headers=HEADERS
         )
 
         print(response.json())

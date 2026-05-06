@@ -15,7 +15,7 @@ load_dotenv()
 
 TOKEN=os.getenv("ACCESS_TOKEN")
 
-header={
+HEADERS={
     "Authorization":f"Bearer{TOKEN}"
 }
 
@@ -44,9 +44,9 @@ def schedule():
             headers=HEADERS
         )
 
-        depots=depots_response.json()["deposts"]
+        depots=depot_response.json()["deposts"]
         vehicles=vehicle_response.json()["vehicles"]
-        mechanic_hours=depots[0]["MechanicHours"]
+        mechanic_hours=depots[0]["mechanicHours"]
 
         log(
             "backend",
